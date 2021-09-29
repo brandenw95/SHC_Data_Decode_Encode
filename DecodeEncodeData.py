@@ -66,14 +66,16 @@ def main():
 
     example_qr_data = parser.get("example_data", "qr_data")
     example_base64data = parser.get("example_data", "base_64_data")
-    
+
     base64_data = NumericToBase64Url(example_qr_data)
+
+    plain_JSON = ''
     plain_JSON = Base64UrlToJson(base64_data)
 
-    new_qr_code = Base64UrltoNumeric(example_base64data)
+    new_qr_code = Base64UrltoNumeric(base64_data)
 
     print(plain_JSON)
-    print(new_qr_code)
+
 
 
 if __name__ == "__main__":
